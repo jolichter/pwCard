@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 #
-# Quellen:
-# https://www.youtube.com/watch?v=jMu5olgIuOE (Florian Dalwigk)
+# Quelle: https://www.youtube.com/watch?v=jMu5olgIuOE (Florian Dalwigk)
+#
+# benötigt library fpdf2: pip install fpdf2
 # fpdf2 info: https://pypi.org/project/fpdf2/
 #
+# Konsolenaufruf z.B.: python main.py 1
+#
 import secrets
+import sys
 import time
 from fpdf import FPDF, HTMLMixin
 
@@ -15,11 +19,22 @@ html = HTML2PDF()
 html.add_page()
 # Core Fonts: courier, times, helvetica
 html.set_font('helvetica', size=12)
+pdfName = 'pwKarte.pdf'
+alphabet = ''
+try:
+    intArg = int(sys.argv[1])
 
-# alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-# alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,+-!?'
-alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%§$.,_-\/?!()={[#]}'
+    if intArg == 1:
+        # mit Sonderzeichen (1 = krass | 2 oder höher = normal)
+        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%§$.,_-\/?!()={[#]}'
+    else:
+        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,+-!?'
+except:
+    # default (Buchstaben und Zahlen)
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+
 head = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQR', 'STU', 'VWX', 'YZ1', '...']
+
 
 def random_string():
     return secrets.choice(alphabet) + secrets.choice(alphabet) + secrets.choice(alphabet)
@@ -77,6 +92,7 @@ def write_pdf():
     html_table += '</tbody></table>'
     # print(html_table)
     html.write_html(html_table)
-    html.output("pwKarte.pdf")
+    html.output(pdfName)
 
 write_pdf()
+print(f'{pdfName} mit "{alphabet}" erstellt :-)')
