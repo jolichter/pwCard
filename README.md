@@ -11,7 +11,7 @@ YT Quelle: [Passwortkarten und wie man sie mit Python erzeugen kann](https://www
 
 ---
 
-**pwCard** ist eine ausführbare Datei für Linux (ca. 11MB) welche alle Abhängigkeiten enthält (kein sudo notwendig!). Getestet mit Manjaro 5.24, Ubuntu 22.04 und Mint 21. Nach dem Download solltet ihr die SHA1 Prüfsumme checken.
+**pwCard** ist eine ausführbare Datei für Linux (ca. 11MB) welche alle Abhängigkeiten enthält (kein sudo notwendig!). Getestet mit Manjaro 21.2.6, Ubuntu 22.04 und Mint 21. Nach dem Download solltet ihr die SHA1 Prüfsumme checken.
 Ausführen z.B.:
 - ./pwCard
 - ./pwCard 1
