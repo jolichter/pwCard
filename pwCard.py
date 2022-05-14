@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# pwCard V 2022-02-12
+# pwCard V 2022-05-14
 #
 # Quelle: https://www.youtube.com/watch?v=jMu5olgIuOE (Florian Dalwigk)
 #
@@ -28,7 +28,7 @@ try:
 
     if intArg == 1:
         # mit Sonderzeichen (1 = krass | 2 oder höher = normal)
-        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%§$.,_+-\/?!()={[#]}'
+        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%§$@#~.,_+-:*\|/<>?!()={[+]}'
     else:
         alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,+-!?'
 except:
