@@ -28,7 +28,7 @@ try:
 
     if intArg == 1:
         # mit Sonderzeichen (1 = krass | 2 oder höher = normal)
-        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%§$@#~.,_+-:*\|/<>?!()={[+]}'
+        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789%§$@#~.,_+-:*\|/<>?!()={[]}'
     else:
         alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,+-!?'
 except:
